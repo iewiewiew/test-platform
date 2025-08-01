@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试数据生成器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧪 测试数据生成器</h1>
+    </header>
+    
+    <div class="data-section">
+      <div class="data-item">
+        <label>身份证号</label>
+        <div class="input-group">
+          <input type="text" id="idCard" readonly>
+          <button class="btn-generate" data-type="idCard">生成</button>
+          <button class="btn-copy" data-target="idCard" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>手机号</label>
+        <div class="input-group">
+          <input type="text" id="phone" readonly>
+          <button class="btn-generate" data-type="phone">生成</button>
+          <button class="btn-copy" data-target="phone" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>邮箱</label>
+        <div class="input-group">
+          <input type="text" id="email" readonly>
+          <button class="btn-generate" data-type="email">生成</button>
+          <button class="btn-copy" data-target="email" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>姓名（中文）</label>
+        <div class="input-group">
+          <input type="text" id="name" readonly>
+          <button class="btn-generate" data-type="name">生成</button>
+          <button class="btn-copy" data-target="name" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>银行卡号</label>
+        <div class="input-group">
+          <input type="text" id="bankCard" readonly>
+          <button class="btn-generate" data-type="bankCard">生成</button>
+          <button class="btn-copy" data-target="bankCard" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>地址</label>
+        <div class="input-group">
+          <input type="text" id="address" readonly>
+          <button class="btn-generate" data-type="address">生成</button>
+          <button class="btn-copy" data-target="address" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>UUID</label>
+        <div class="input-group">
+          <input type="text" id="uuid" readonly>
+          <button class="btn-generate" data-type="uuid">生成</button>
+          <button class="btn-copy" data-target="uuid" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>日期时间</label>
+        <div class="input-group">
+          <input type="text" id="datetime" readonly>
+          <button class="btn-generate" data-type="datetime">生成</button>
+          <button class="btn-copy" data-target="datetime" title="复制">📋</button>
+        </div>
+      </div>
+
+      <div class="data-item">
+        <label>随机字符串</label>
+        <div class="input-group">
+          <input type="text" id="randomString" readonly>
+          <button class="btn-generate" data-type="randomString">生成</button>
+          <button class="btn-copy" data-target="randomString" title="复制">📋</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-generate-all">一键生成全部</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+

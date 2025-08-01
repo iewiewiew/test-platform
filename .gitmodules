@@ -1,0 +1,6 @@
+[submodule "backend/app/docs"]
+	path = backend/app/docs
+	url = git@github.com:iewiewiew/wei-notebook.git
+[submodule "backend/app/api-autotest"]
+	path = backend/app/api-autotest
+	url = git@gitee.com:iewiewiew/api-autotest.git
