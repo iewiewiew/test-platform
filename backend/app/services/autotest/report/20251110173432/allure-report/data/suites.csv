@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"查看仓库","429","TC002-查看仓库","testcase","Mon Nov 10 17:34:32 CST 2025","passed","Mon Nov 10 17:34:33 CST 2025","TestAPI","test_auto_20251110173432_example_premium_k8s","",""
