@@ -1,0 +1,274 @@
+/* 公共列表容器样式 */
+.common-list-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 防止溢出 */
+  min-height: 0; /* 确保flex容器可以正确收缩 */
+}
+
+/* 公共头部栏样式 */
+.common-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* 公共搜索栏样式 */
+.common-search-bar {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 公共操作栏样式 */
+.common-action-bar {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* 公共表格容器样式 */
+.common-table-container {
+  margin-bottom: 20px;
+}
+
+/* 公共表格样式 */
+.common-list-container :deep(.el-table) {
+  margin-bottom: 20px;
+}
+
+/* 公共分页样式 */
+.common-pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* 分页容器样式 */
+.pagination {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+/* 直接使用的分页样式 */
+.common-list-container :deep(.el-pagination) {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Element Plus 内联表单样式（全局统一） */
+:deep(.el-form--inline .el-form-item) {
+  margin-right: 16px;
+  margin-bottom: 0;
+}
+
+:deep(.el-form--inline .el-form-item__label) {
+  width: auto !important;
+}
+
+/* 表格内按钮样式 */
+:deep(.el-table .el-button) {
+  margin: 2px;
+}
+
+:deep(.el-table .el-link) {
+  font-weight: 500;
+}
+
+/* 对话框样式优化 - 标题居中（全局生效） */
+:deep(.el-dialog__header) {
+  position: relative;
+  padding: 20px 50px 16px 20px; /* 右侧为关闭按钮留出足够空间 */
+  text-align: center;
+}
+
+:deep(.el-dialog__title) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: auto;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+:deep(.el-dialog__headerbtn) {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+  color: #909399;
+}
+
+:deep(.el-dialog__headerbtn:hover) {
+  background-color: #f5f7fa;
+  color: #606266;
+}
+
+:deep(.el-dialog__headerbtn .el-dialog__close) {
+  font-size: 18px;
+  color: inherit;
+}
+
+:deep(.el-dialog__body) {
+  padding: 20px;
+}
+
+:deep(.el-form-item__label) {
+  font-weight: 500;
+}
+
+:deep(.el-textarea .el-textarea__inner) {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* 公共代码显示样式 */
+pre {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 公共JSON内容样式 */
+.json-content {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 公共空状态样式 */
+.no-output {
+  padding: 40px;
+  text-align: center;
+  color: #909399;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .common-header-bar {
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .common-search-bar {
+    width: 100%;
+  }
+
+  .common-action-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .common-list-container {
+    padding: 16px;
+  }
+
+  .common-header-bar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .common-search-bar,
+  .common-action-bar {
+    width: 100%;
+  }
+
+  .common-action-bar {
+    margin-top: 0;
+    justify-content: flex-end;
+  }
+
+  :deep(.el-form--inline .el-form-item) {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  :deep(.el-form--inline .el-form-item__content) {
+    width: 100%;
+  }
+
+  :deep(.el-form--inline .el-select) {
+    width: 100%;
+  }
+
+  :deep(.el-form--inline .el-input) {
+    width: 100%;
+  }
+
+  .pagination {
+    padding: 12px 16px;
+  }
+}
+
+/* 暗黑模式公共样式 */
+.dark .common-list-container {
+  background-color: #1f1f1f;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+  color: #e5e5e5;
+}
+
+.dark pre {
+  background: #262626;
+  color: #e5e5e5;
+}
+
+.dark .json-content {
+  background: #262626;
+  color: #e5e5e5;
+}
+
+.dark .no-output {
+  color: #8c8c8c;
+}
+
+.dark .el-dialog__headerbtn:hover {
+  background-color: #303030;
+  color: #e5e5e5;
+}

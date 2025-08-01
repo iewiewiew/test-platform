@@ -1,0 +1,84 @@
+{
+  "pipeline_displayname_list": [
+    "Maven构建测试",
+    "Maven构建上传发布",
+    "Maven镜像构建",
+    "Maven构建制品发布",
+    "Maven发型版Release",
+    "Python构建测试",
+    "Python构建上传发布主机部署",
+    "Golang构建测试",
+    "Nodejs构建测试",
+    "PHP构建测试",
+    "Ant构建",
+    "GCC构建",
+    "NETCore构建",
+    "Jacoco覆盖率采集",
+    "Cobertura覆盖率采集",
+    "Gradle构建测试",
+    "Ruby构建",
+    "基于镜像的脚本执行",
+    "Shell脚本执行",
+    "K8S和Helm部署"
+  ],
+  "repo_list": [
+    "java-maven-example",
+    "python-example",
+    "golang-example",
+    "nodejs-example",
+    "java-ant-example",
+    "java-jacoco-example",
+    "java-cobertura-example",
+    "php-example",
+    "c-gcc-example",
+    "dotnet-core-example",
+    "java-gradle-example",
+    "ruby-example"
+  ],
+  "pipeline_methods": {
+    "java-maven-example": [
+      "pipeline_maven_body",
+      "pipeline_maven_upload_body",
+      "pipeline_maven_release_body",
+      "pipeline_maven_repo_body",
+      "pipeline_maven_image_body",
+      "pipeline_k8s_helm_body"
+    ],
+    "python-example": [
+      "pipeline_python_body",
+      "pipeline_python_deploy_body",
+      "pipeline_execute_base_on_images",
+      "pipeline_shell_body"
+    ],
+    "golang-example": [
+      "pipeline_golang_body"
+    ],
+    "nodejs-example": [
+      "pipeline_nodejs_body"
+    ],
+    "php-example": [
+      "pipeline_php_body"
+    ],
+    "java-ant-example": [
+      "pipeline_ant_body"
+    ],
+    "java-jacoco-example": [
+      "pipeline_jacoco_body"
+    ],
+    "java-cobertura-example": [
+      "pipeline_cobertura_body"
+    ],
+    "java-gradle-example": [
+      "pipeline_gradle_body"
+    ],
+     "dotnet-core-example": [
+      "pipeline_dotnet_body"
+    ],
+    "c-gcc-example": [
+      "pipeline_gcc_body"
+    ],
+     "ruby-example": [
+      "pipeline_ruby_body"
+    ]
+  }
+}

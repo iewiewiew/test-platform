@@ -1,0 +1,67 @@
+services:
+  db:
+    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/library/mysql:8.0
+    container_name: test_platform_db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: test_platform
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/docker/db-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-p123456"]
+      interval: 10s
+      timeout: 20s
+      retries: 15
+    networks:
+      - app_network
+
+  test_platform_backend:
+    build: ./backend
+    container_name: test_platform_backend
+    ports:
+      - "5001:5001"
+    environment:
+      DATABASE_URL: "mysql+mysqlconnector://root:123456@db:3306/test_platform?charset=utf8mb4"
+      FLASK_ENV: "${FLASK_ENV:-development}" # 可选: development, testing, production
+      FLASK_DEBUG: "0"
+      PORT: "5001"
+      HOST: "0.0.0.0"
+      AUTO_MIGRATE: "true"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    networks:
+      - app_network
+
+  test_platform_frontend:
+    build: ./frontend
+    container_name: test_platform_frontend
+    ports:
+      - "8899:80"
+    depends_on:
+      - test_platform_backend
+    networks:
+      - app_network
+
+volumes:
+  mysql_data:
+  backend_data:
+
+networks:
+  app_network:
+# 测试查询
+# docker exec -it test_platform_db mysql -uroot -p123456 -e "SELECT host, user FROM mysql.user;"
+# docker exec -it test_platform_db mysql -uroot -p123456 -e "SELECT * FROM test_platform.examples;"

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图标生成器</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      .icon-preview {
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+      }
+      canvas {
+        border: 1px solid #ddd;
+        margin: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background: #5568d3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chrome 扩展图标生成器</h1>
+    <p>点击下方按钮生成图标，然后右键保存图片到 icons 目录</p>
+
+    <div id="previews"></div>
+
+    <button onclick="generateIcons()">生成图标</button>
+    <button onclick="downloadAll()">下载全部</button>
+
+    <script>
+      function createIcon(size) {
+        const canvas = document.createElement("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext("2d");
+
+        // 创建渐变背景
+        const gradient = ctx.createLinearGradient(0, 0, size, size);
+        gradient.addColorStop(0, "#667eea");
+        gradient.addColorStop(1, "#764ba2");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, size, size);
+
+        // 绘制 "T" 字母
+        ctx.fillStyle = "white";
+        ctx.font = `bold ${size * 0.6}px Arial`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("T", size / 2, size / 2);
+
+        return canvas;
+      }
+
+      function generateIcons() {
+        const sizes = [16, 48, 128];
+        const container = document.getElementById("previews");
+        container.innerHTML = "";
+
+        sizes.forEach((size) => {
+          const canvas = createIcon(size);
+          const div = document.createElement("div");
+          div.className = "icon-preview";
+          div.innerHTML = `
+          <canvas id="icon${size}" width="${size}" height="${size}"></canvas>
+          <br>
+          <small>icon${size}.png (${size}x${size})</small>
+          <br>
+          <button onclick="downloadIcon(${size})">下载</button>
+        `;
+          container.appendChild(div);
+
+          const previewCanvas = div.querySelector("canvas");
+          const previewCtx = previewCanvas.getContext("2d");
+          previewCtx.drawImage(canvas, 0, 0);
+        });
+      }
+
+      function downloadIcon(size) {
+        const canvas = createIcon(size);
+        canvas.toBlob((blob) => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `icon${size}.png`;
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      }
+
+      function downloadAll() {
+        [16, 48, 128].forEach((size) => {
+          setTimeout(() => downloadIcon(size), size * 10);
+        });
+      }
+
+      // 页面加载时自动生成
+      window.onload = generateIcons;
+    </script>
+  </body>
+</html>
+
+
+
+
+
