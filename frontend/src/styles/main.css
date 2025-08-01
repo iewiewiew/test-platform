@@ -1,0 +1,193 @@
+/* src/styles/main.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  #app {
+    height: 100vh;
+  }
+
+/* 暗黑模式全局样式 */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #141414;
+  color: #e5e5e5;
+}
+
+/* Element Plus 暗黑模式支持 */
+.dark .el-card {
+  background-color: #1f1f1f;
+  border-color: #303030;
+  color: #e5e5e5;
+}
+
+.dark .el-table {
+  background-color: #1f1f1f;
+  color: #e5e5e5;
+}
+
+.dark .el-table th {
+  background-color: #262626;
+  color: #e5e5e5;
+}
+
+.dark .el-table td {
+  background-color: #1f1f1f;
+  border-color: #303030;
+}
+
+.dark .el-table tr:hover > td {
+  background-color: #262626;
+}
+
+.dark .el-input__wrapper {
+  background-color: #262626;
+  border-color: #434343;
+}
+
+.dark .el-input__inner {
+  color: #e5e5e5;
+}
+
+.dark .el-textarea__inner {
+  background-color: #262626;
+  border-color: #434343;
+  color: #e5e5e5;
+}
+
+.dark .el-select .el-input__wrapper {
+  background-color: #262626;
+  border-color: #434343;
+}
+
+.dark .el-select-dropdown {
+  background-color: #1f1f1f;
+  border-color: #303030;
+}
+
+.dark .el-select-dropdown__item {
+  color: #e5e5e5;
+}
+
+.dark .el-select-dropdown__item:hover {
+  background-color: #303030;
+}
+
+.dark .el-select-dropdown__item.selected {
+  color: #1890ff;
+}
+
+.dark .el-dialog {
+  background-color: #1f1f1f;
+  border-color: #303030;
+}
+
+.dark .el-dialog__header {
+  border-bottom-color: #303030;
+}
+
+.dark .el-dialog__title {
+  color: #e5e5e5;
+}
+
+.dark .el-dialog__body {
+  color: #e5e5e5;
+}
+
+.dark .el-drawer {
+  background-color: #1f1f1f;
+}
+
+.dark .el-drawer__header {
+  border-bottom-color: #303030;
+}
+
+.dark .el-drawer__title {
+  color: #e5e5e5;
+}
+
+.dark .el-drawer__body {
+  color: #e5e5e5;
+}
+
+.dark .el-form-item__label {
+  color: #e5e5e5;
+}
+
+.dark .el-button--default {
+  background-color: #262626;
+  border-color: #434343;
+  color: #e5e5e5;
+}
+
+.dark .el-button--default:hover {
+  background-color: #303030;
+  border-color: #595959;
+}
+
+.dark .el-pagination {
+  color: #e5e5e5;
+}
+
+.dark .el-pagination .btn-next,
+.dark .el-pagination .btn-prev {
+  background-color: #262626;
+  color: #e5e5e5;
+}
+
+.dark .el-pagination .btn-next:hover,
+.dark .el-pagination .btn-prev:hover {
+  background-color: #303030;
+}
+
+.dark .el-pagination .number {
+  background-color: #262626;
+  color: #e5e5e5;
+}
+
+.dark .el-pagination .number:hover {
+  background-color: #303030;
+}
+
+.dark .el-pagination .number.is-active {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+.dark .el-message-box {
+  background-color: #1f1f1f;
+  border-color: #303030;
+}
+
+.dark .el-message-box__title {
+  color: #e5e5e5;
+}
+
+.dark .el-message-box__message {
+  color: #e5e5e5;
+}
+
+.dark .el-dropdown-menu {
+  background-color: #1f1f1f;
+  border-color: #303030;
+}
+
+.dark .el-dropdown-menu__item {
+  color: #e5e5e5;
+}
+
+.dark .el-dropdown-menu__item:hover {
+  background-color: #303030;
+}
+
+.dark .el-tooltip__popper {
+  background-color: #1f1f1f;
+  color: #e5e5e5;
+  border-color: #303030;
+}

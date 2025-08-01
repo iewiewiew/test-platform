@@ -1,0 +1,70 @@
+{
+  "name": "vscode-calendar",
+  "displayName": "Calendar",
+  "description": "A simple calendar extension for VSCode, Cursor and other compatible editors",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/vscode-calendar"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "calendarView",
+          "name": "Calendar",
+          "type": "webview",
+          "when": "true"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "calendar.refresh",
+        "title": "Refresh Calendar",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "calendar.focus",
+        "title": "Focus Calendar View",
+        "icon": "$(calendar)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "calendar.refresh",
+          "when": "view == calendarView",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "package": "vsce package",
+    "package:patch": "vsce package --out ./vscode-calendar.vsix",
+    "package:minor": "npm version minor && vsce package",
+    "package:major": "npm version major && vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^16.x",
+    "eslint": "^8.0.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}

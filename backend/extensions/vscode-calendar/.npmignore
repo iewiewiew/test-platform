@@ -1,0 +1,10 @@
+.vscode/
+.vscode-test/
+node_modules/
+.git/
+.gitignore
+*.vsix
+.DS_Store
+*.log
+PACKAGING.md
+TROUBLESHOOTING.md

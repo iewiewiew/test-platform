@@ -1,0 +1,3 @@
+[submodule "backend/app/docs"]
+	path = backend/app/docs
+	url = git@github.com:iewiewiew/wei-notebook.git
