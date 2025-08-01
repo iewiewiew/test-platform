@@ -1,0 +1,47 @@
+example_env:
+  enterprise_info:
+    host: 'example.com'
+    enterprise_id: '1'
+    enterprise_path: 'testent001'
+    user_id: '1'
+    username: 'admin'
+    password: 'admin@123'
+    access_token: ''
+    session_cookie: ''
+  project_info:
+    project_id: ''
+    project_path: ''
+    project_list:
+      p1: 'https://gitee.com/code-repo-example/java-maven-example.git'
+      p2: 'https://gitee.com/code-repo-example/java-gradle-example.git'
+      p3: 'https://gitee.com/code-repo-example/java-ant-example.git'
+      p4: 'https://gitee.com/code-repo-example/java-jacoco-example.git'
+      p5: 'https://gitee.com/code-repo-example/java-cobertura-example.git'
+      p6: 'https://gitee.com/code-repo-example/python-example.git'
+      p7: 'https://gitee.com/code-repo-example/golang-example.git'
+      p8: 'https://gitee.com/code-repo-example/ruby-example.git'
+      p9: 'https://gitee.com/code-repo-example/php-example.git'
+      p10: 'https://gitee.com/code-repo-example/nodejs-example.git'
+      p11: 'https://gitee.com/code-repo-example/c-gcc-example.git'
+      p12: 'https://gitee.com/code-repo-example/dotnet-core-example.git'
+  mix_info:
+    scheme: 'https'
+    team_id: ''
+    program_id: ''
+    file_path: 'files'
+  git:
+    ssh_url: "ssh://git@example.com:testent001/api_example.git"
+    http_url: "https://admin:admin%40123@example.com/testent001/api_example.git"
+    username: "admin"
+    email: "admin@qq.com"
+  giteego:
+    repo_username: 'admin'
+    repo_password: '123456'
+    repo_artifact_url: 'http://127.0.0.1:8000/repo'
+    artifact_repository: 'giteego-repo-example'
+    docker_responsitory: 'example.com'
+    docker_username: 'admin'
+    docker_password: '123456'
+    docker_images_tag: 'thirdparty/giteego-test:latest'
+    sleep_time: 90
+    is_run_pipeline: 'yes'
